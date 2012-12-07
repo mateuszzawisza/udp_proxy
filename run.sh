@@ -1,3 +1,4 @@
 #!/bin/bash
-erlc -o ebin listener.erl
-erl -pa ebin -noshell -eval "listener:server(9000)."
+mkdir -p ebin
+erlc -o ebin udp_proxy.erl
+erl -pa ebin -noshell -eval "udp_proxy:start(9000)"
